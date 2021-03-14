@@ -1,0 +1,19 @@
+{
+  "name": "@kailash-js/react-native-uikit",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.ts",    
+  "scripts": {
+    "clean": "rm -r -f dist/lib/*",
+    "build":"./../../../node_modules/typescript/bin/tsc --project tsconfig.production.json",
+    "optimized-lib":"cp -r dist/lib/ dist/temp && rm -r -f dist/lib/* && cp -r dist/temp/react-native-uikit/* dist/lib && rm -r -f dist/temp",
+    "clean-build":"yarn clean && yarn build && yarn optimized-lib",
+    "publish-package": "yarn clean-build && cd dist && npm publish"
+  },
+  "peerDependencies": {
+    "@kailash-js/react-native-bases": "^1.0.0",
+    "@kailash-js/react-native-motion-layers": "^1.0.0",
+    "@kailash-js/react-native-keyboard":"^1.0.0"
+  }
+}

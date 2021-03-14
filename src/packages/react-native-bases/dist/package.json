@@ -1,0 +1,30 @@
+{
+    "name": "@kailash-js/react-native-bases",
+    "description": "Foundation to develop a good react-native app.",
+    "version": "1.0.0",
+    "keywords": [
+        "react-native-component",
+        "react-component",
+        "react-native",        
+        "ios",
+        "android"        
+      ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kailash-js/react-native.git",
+        "directory": "src/packages/react-native-bases"
+    },
+    "bugs": {
+      "url": "https://github.com/kailash-js/react-native/issues"
+    },
+    "homepage": "https://kailashjs.dev/docs/react-native-bases/",
+    "main": "lib/index.js",    
+    "peerDependencies": {
+        
+    },
+    "dependencies": {
+       
+    }
+   }
+   

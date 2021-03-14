@@ -1,0 +1,12 @@
+{
+    "name": "@kailash-js/react-native-uikit",
+    "version": "1.0.8",
+    "main": "lib/index.js",    
+    "peerDependencies": {
+        
+    },
+    "dependencies": {
+       
+    }
+   }
+   
