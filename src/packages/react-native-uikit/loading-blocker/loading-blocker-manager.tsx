@@ -53,13 +53,19 @@ class LoadingBlockerManager {
 
   autoHideLoadingBlocker({duration}: {duration: number}) {
     setTimeout(() => {
-      this.hideLoadingBlocker();
+      this.hideLoadingBlocker(false);
     }, duration);
   }
 
-  hideLoadingBlocker() {
-    if (this.motionLayerHandler.dismiss) {
-      this.motionLayerHandler.dismiss();
+  hideLoadingBlocker(delay: boolean = true) {
+    if (delay) {
+      this.autoHideLoadingBlocker({duration: 500});
+    } else {
+      if (this.motionLayerHandler.dismiss) {
+        this.motionLayerHandler.dismiss(() => {
+          this.motionLayerHandler = Handler.createStaticHandler<MotionLayerHandler>();
+        });
+      }
     }
   }
 
@@ -82,7 +88,9 @@ class LoadingBlockerManager {
 
   hideTransparentLoadingBlocker() {
     if (this.transparentMLHandler.dismiss) {
-      this.transparentMLHandler.dismiss();
+      this.transparentMLHandler.dismiss(() => {
+        this.transparentMLHandler = Handler.createStaticHandler<MotionLayerHandler>();
+      });
     }
   }
 

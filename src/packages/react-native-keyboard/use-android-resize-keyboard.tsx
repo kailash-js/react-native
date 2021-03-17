@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 // @ts-ignore
-import AndroidKeyboardAdjust from '@react-native-lightkits/android-keyboard-adjust';
+import AndroidKeyboardAdjust from '@kailash-js/android-keyboard-adjust';
 
 export const useAndroidResizeKeyboard = () => {
   useEffect(() => {

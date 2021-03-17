@@ -1,7 +1,30 @@
 {
     "name": "@kailash-js/react-native-keyboard",
+    "description": "Better way to handle keyboard in react-native.",
     "version": "1.0.0",
+    "keywords": [
+        "react-native-component",
+        "react-component",
+        "react-native",        
+        "ios",
+        "keyboard",
+        "react-native keyboard",
+        "android"        
+      ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kailash-js/react-native.git",
+        "directory": "src/packages/react-native-keyboard"
+    },
+    "bugs": {
+      "url": "https://github.com/kailash-js/react-native/issues"
+    },
+    "homepage": "https://kailashjs.dev/docs/react-native-keyboard/",
     "main": "lib/index.js",    
+    "publishConfig": {
+      "access": "public"
+    },
     "peerDependencies": {
         
     },
@@ -9,4 +32,3 @@
        
     }
    }
-   

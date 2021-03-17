@@ -1,7 +1,7 @@
 import React, {FC, useState, useEffect} from 'react';
 import {
   LayerStackManager,
-  DEFAULT_RALAYER_CONTAINER_ID,
+  DEFAULT_LAYER_CONTAINER_ID,
 } from './layer-stack-manager';
 import {LayerStackContainerHandler} from './types';
 //@ts-ignore
@@ -14,7 +14,7 @@ export interface LayerStackContainerProps {
 }
 
 const LayerStackContainer: FC<LayerStackContainerProps> = ({
-  containerId = DEFAULT_RALAYER_CONTAINER_ID,
+  containerId = DEFAULT_LAYER_CONTAINER_ID,
 }) => {
   const handler = Handler.useHandler<LayerStackContainerHandler>();
   //
@@ -22,7 +22,7 @@ const LayerStackContainer: FC<LayerStackContainerProps> = ({
   const [rerender, setRerender] = useState<number>(0);
   //
   const rerenderIfAny = () => {
-    setRerender((value) => ++value);
+    setRerender(value => ++value);
   };
 
   Handler.useExposeHandler(

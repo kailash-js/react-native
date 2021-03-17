@@ -90,11 +90,8 @@ class MotionLayerManager {
     });
     if (index !== -1) {
       childComponentFuncs.splice(index, 1);
-    } else {
-      childComponentFuncs.pop();
+      MotionLayerComponentStorage.remove(componentId);
     }
-    //
-    MotionLayerComponentStorage.remove(componentId);
   }
 
   dismiss(

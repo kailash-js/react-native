@@ -1,12 +1,34 @@
 {
     "name": "@kailash-js/react-native-uikit",
-    "version": "1.0.8",
+    "description": "A higly customizable reusable UI components for react-native.",
+    "version": "1.0.0",
+    "keywords": [
+        "react-native-component",
+        "react-component",
+        "react-native",        
+        "ios",
+        "keyboard",
+        "react-native view",
+        "android"        
+      ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kailash-js/react-native.git",
+        "directory": "src/packages/react-native-uikit"
+    },
+    "bugs": {
+      "url": "https://github.com/kailash-js/react-native/issues"
+    },
+    "homepage": "https://kailashjs.dev/docs/react-native-uikit/",
     "main": "lib/index.js",    
+    "publishConfig": {
+      "access": "public"
+    },
     "peerDependencies": {
         
     },
     "dependencies": {
        
     }
-   }
-   
+}
