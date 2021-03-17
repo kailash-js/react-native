@@ -26,7 +26,7 @@
       "access": "public"
     },
     "peerDependencies": {
-      "@kailash-js/react-native-bases": "^1.0.0"
+      "@kailash-js/react-native-bases": "^1.0.1"
     },
     "dependencies": {
        

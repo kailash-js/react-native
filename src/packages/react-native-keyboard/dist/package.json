@@ -1,7 +1,7 @@
 {
     "name": "@kailash-js/react-native-keyboard",
     "description": "Better way to handle keyboard in react-native.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "react-native-component",
         "react-component",
