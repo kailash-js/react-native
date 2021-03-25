@@ -13,6 +13,7 @@ export interface SlideLayerConfig<T extends MotionLayerComponentProps> {
   MotionLayerComponent: React.FC<T>;
   props: T;
   motionLayerProps?: SlideLayerProps;
+  autoDismissKeyboard?: boolean;
   slideFrom?: SlideFromDirection | undefined;
   targetContainerId?: string;
 }

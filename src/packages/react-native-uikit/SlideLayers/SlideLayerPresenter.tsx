@@ -1,4 +1,5 @@
 import React from 'react';
+import {Keyboard} from 'react-native';
 import {
   MotionLayerManager,
   ComponentContext,
@@ -10,6 +11,12 @@ import Animated from 'react-native-reanimated';
 
 class SlideLayerPresenter {
   present<T>(config: SlideLayerConfig<T>) {
+    const autoDismissKeyboard = config.autoDismissKeyboard || true;
+    //
+    if (autoDismissKeyboard) {
+      Keyboard.dismiss();
+    }
+    //
     switch (config.slideFrom) {
       case 'top':
         return MotionLayerManager.present(
