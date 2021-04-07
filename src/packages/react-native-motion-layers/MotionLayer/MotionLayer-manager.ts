@@ -54,18 +54,20 @@ class MotionLayerManager {
       containerId: DEFAULT_RALAYER_CONTAINER_ID,
     },
   ) {
+    const containerId = options.containerId || DEFAULT_RALAYER_CONTAINER_ID;
+    //
     const childComponentFuncs = this.getChildComponentFuncs(
       options.containerId,
     );
-    const containerHandler = this.getTopLayerHandler(options.containerId);
+    const containerHandler = this.getTopLayerHandler(containerId);
     //
     const componentId = utils.randomString({length: 8});
     //
     const componentFuncItem = {
       componentId: componentId,
       subLayerContainerHandler: Handler.createStaticHandler<RASubLayerLayerContainerHandler>(),
-      containerId: options.containerId,
-      ctx: {componentId, containerId: options.containerId!},
+      containerId: containerId,
+      ctx: {componentId, containerId: containerId},
       func: comFunc,
     };
     //
@@ -85,7 +87,7 @@ class MotionLayerManager {
 
   removeChildComponentFuncById(containerId: string, componentId: string) {
     const childComponentFuncs = this.getChildComponentFuncs(containerId);
-    const index = childComponentFuncs.findIndex((item) => {
+    const index = childComponentFuncs.findIndex(item => {
       return item.componentId === componentId;
     });
     if (index !== -1) {

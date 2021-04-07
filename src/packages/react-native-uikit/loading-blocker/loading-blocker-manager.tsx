@@ -13,6 +13,9 @@ class LoadingBlockerManager {
   motionLayerHandler = Handler.createStaticHandler<MotionLayerHandler>();
   transparentMLHandler = Handler.createStaticHandler<MotionLayerHandler>();
 
+  hideLoadingBlockerDelay = 250;
+  hideTransparentLoadingBlockerDelay = 250;
+  //
   //This can be outside of the app for a customization
   loadingBlockerView: React.FC | null = () => {
     return (
@@ -53,19 +56,22 @@ class LoadingBlockerManager {
 
   autoHideLoadingBlocker({duration}: {duration: number}) {
     setTimeout(() => {
-      this.hideLoadingBlocker(false);
+      this._hideLoadingBlocker();
     }, duration);
   }
 
-  hideLoadingBlocker(delay: boolean = true) {
-    if (delay) {
-      this.autoHideLoadingBlocker({duration: 500});
-    } else {
-      if (this.motionLayerHandler.dismiss) {
-        this.motionLayerHandler.dismiss(() => {
-          this.motionLayerHandler = Handler.createStaticHandler<MotionLayerHandler>();
-        });
-      }
+  hideLoadingBlocker(onFinished?: () => void) {
+    setTimeout(() => {
+      this._hideLoadingBlocker(onFinished);
+    }, this.hideLoadingBlockerDelay);
+  }
+
+  _hideLoadingBlocker(onFinished?: () => void) {
+    if (this.motionLayerHandler.dismiss) {
+      this.motionLayerHandler.dismiss(() => {
+        this.motionLayerHandler = Handler.createStaticHandler<MotionLayerHandler>();
+        onFinished && onFinished();
+      });
     }
   }
 
@@ -86,17 +92,24 @@ class LoadingBlockerManager {
     });
   }
 
-  hideTransparentLoadingBlocker() {
+  hideTransparentLoadingBlocker(onFinished?: () => void) {
+    setTimeout(() => {
+      this._hideTransparentLoadingBlocker(onFinished);
+    }, this.hideTransparentLoadingBlockerDelay);
+  }
+
+  _hideTransparentLoadingBlocker(onFinished?: () => void) {
     if (this.transparentMLHandler.dismiss) {
       this.transparentMLHandler.dismiss(() => {
         this.transparentMLHandler = Handler.createStaticHandler<MotionLayerHandler>();
+        onFinished && onFinished();
       });
     }
   }
 
   autoHideTransparentLoadingBlocker({duration}: {duration: number}) {
     setTimeout(() => {
-      this.hideTransparentLoadingBlocker();
+      this._hideTransparentLoadingBlocker();
     }, duration);
   }
 }

@@ -288,7 +288,7 @@ export const MotionLayersScreen = () => {
     });
   };
 
-  const CustomLayout: RAContentLayoutComponent = (props) => {
+  const CustomLayout: RAContentLayoutComponent = props => {
     return (
       <View
         style={{
@@ -370,6 +370,11 @@ export const MotionLayersScreen = () => {
 
     LoadingBlockerManager.showLoadingBlocker();
     LoadingBlockerManager.autoHideLoadingBlocker({duration: 2000});
+  };
+
+  const showLoadingBlockerQuick = () => {
+    LoadingBlockerManager.showLoadingBlocker();
+    LoadingBlockerManager.hideLoadingBlocker();
   };
 
   const showCustomLoadingBlocker = () => {
@@ -565,6 +570,10 @@ export const MotionLayersScreen = () => {
           <Button title="Slide down" onPress={showSlideDownPopupAction} />
           <Button title="Slide up" onPress={showSlideUpPopupAction} />
           <Button title="Show Loading Blocker" onPress={showLoadingBlocker} />
+          <Button
+            title="Show Loading Blocker(auto close, quick)"
+            onPress={showLoadingBlockerQuick}
+          />
           <Button
             title="Show custom Loading Blocker"
             onPress={showCustomLoadingBlocker}
