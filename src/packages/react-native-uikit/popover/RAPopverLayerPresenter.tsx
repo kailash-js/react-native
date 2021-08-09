@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  DEFAULT_RALAYER_CONTAINER_ID,
+  DEFAULT_MOTION_LAYER_CONTAINER_ID,
   MotionLayerManager,
   ComponentContext,
   MotionLayerHandler,
@@ -44,7 +44,7 @@ class MPopoverLayerPresenter {
           </PopOverView>
         );
       },
-      {containerId: config.targetContainerId || DEFAULT_RALAYER_CONTAINER_ID},
+      {containerId: config.targetContainerId || DEFAULT_MOTION_LAYER_CONTAINER_ID},
     );
   }
 }

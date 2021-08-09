@@ -1,7 +1,7 @@
 {
     "name": "@kailash-js/react-native-bases",
     "description": "Foundation to develop a good react-native app.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "keywords": [
         "react-native-component",
         "react-component",

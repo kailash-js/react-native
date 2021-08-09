@@ -1,7 +1,7 @@
 {
     "name": "@kailash-js/react-native-uikit",
     "description": "A higly customizable reusable UI components for react-native.",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "keywords": [
         "react-native-component",
         "react-component",

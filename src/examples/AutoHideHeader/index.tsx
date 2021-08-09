@@ -8,10 +8,11 @@ import Animated, {
   scrollTo,
   withTiming,
   Easing,
+  interpolate,
+  Extrapolate,
 } from 'react-native-reanimated';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {clamp} from 'react-native-redash';
-const {interpolate, Extrapolate} = Animated;
 import {MainStackParamList, MainStackScreens} from '../navigator-params';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {SvgIcons} from '@assets';
@@ -40,7 +41,7 @@ const AutoHideHeaderScreen: React.FC<AutoHideHeaderScreenProps> = ({
   const startScrollY = useSharedValue(0);
 
   const scrollHandler = useAnimatedScrollHandler<{}>({
-    onScroll: (event) => {
+    onScroll: event => {
       translationY.value = event.contentOffset.y;
       if (isScrolling.value) {
         const diff = startScrollY.value - translationY.value;
@@ -55,7 +56,7 @@ const AutoHideHeaderScreen: React.FC<AutoHideHeaderScreenProps> = ({
         }
       }
     },
-    onBeginDrag: (event) => {
+    onBeginDrag: event => {
       startScrollY.value = event.contentOffset.y;
       startHeaderProgressOffsetY.value = headerProgressY.value;
       isScrolling.value = true;

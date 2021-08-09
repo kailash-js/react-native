@@ -1,4 +1,4 @@
-import React, {FC, useState, useEffect} from 'react';
+import React, {FC, useState, useEffect, useRef} from 'react';
 import {StyleSheet, View, LayoutChangeEvent} from 'react-native';
 import {OverlayView} from './OverlayView';
 // @ts-ignore
@@ -46,7 +46,7 @@ const MotionLayer: FC<MotionLayerProps> = ({
   animationMetaData = {},
 }) => {
   const [isPresenting, setIsPresenting] = useState(false);
-
+  const presentationStarted = useRef(false);
   const animatedProgress = useSharedValue(0);
   const layoutAnimatedProgress = useSharedValue(0);
   const layoutIsUserInteracting = useSharedValue(false);
@@ -129,7 +129,8 @@ const MotionLayer: FC<MotionLayerProps> = ({
   );
 
   const onAnimationContainerLayout = (e: LayoutChangeEvent) => {
-    if (isPresenting) {
+    if (isPresenting && !presentationStarted.current) {
+      presentationStarted.current = true;
       const {layout} = e.nativeEvent;
       animatedLayoutValue.value = {
         ...layout,

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  DEFAULT_RALAYER_CONTAINER_ID,
+  DEFAULT_MOTION_LAYER_CONTAINER_ID,
   MotionLayerManager,
   MotionLayer,
 } from '../MotionLayer';
@@ -97,7 +97,10 @@ class MotionLayerPresenter {
           </MotionLayer>
         );
       },
-      {containerId: config.targetContainerId || DEFAULT_RALAYER_CONTAINER_ID},
+      {
+        containerId:
+          config.targetContainerId || DEFAULT_MOTION_LAYER_CONTAINER_ID,
+      },
     );
   }
 }

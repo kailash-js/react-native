@@ -2,11 +2,13 @@ import React, {FC} from 'react';
 import {StyleSheet} from 'react-native';
 //@ts-ignore
 import {Handler} from '@kailash-js/react-native-bases';
-import Animated from 'react-native-reanimated';
+import Animated, {
+  interpolate,
+  Extrapolate,
+  useAnimatedStyle,
+} from 'react-native-reanimated';
 import {RASubLayerLayerContainerHandler} from '../types';
 import {State, TapGestureHandler} from 'react-native-gesture-handler';
-
-const {interpolate, Extrapolate, useAnimatedStyle} = Animated;
 
 export interface MSubLayerContainerProps {
   children?: React.ReactNode;

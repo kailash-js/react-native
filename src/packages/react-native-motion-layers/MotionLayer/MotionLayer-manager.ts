@@ -9,7 +9,7 @@ import {
 import {utils, Handler} from '@kailash-js/react-native-bases';
 import {MotionLayerComponentStorage} from './MotionLayerComponentStorage';
 
-export const DEFAULT_RALAYER_CONTAINER_ID = 'default';
+export const DEFAULT_MOTION_LAYER_CONTAINER_ID = 'default';
 export const DEFAULT_COMPONENT_ID = 'defaultCID';
 
 class MotionLayerManager {
@@ -24,7 +24,7 @@ class MotionLayerManager {
   >();
 
   getChildComponentFuncs(
-    containerId: string = DEFAULT_RALAYER_CONTAINER_ID,
+    containerId: string = DEFAULT_MOTION_LAYER_CONTAINER_ID,
   ): ComponentFuncItem[] {
     if (this.ChildComponentFuncs.has(containerId)) {
       return this.ChildComponentFuncs.get(containerId) || [];
@@ -33,7 +33,7 @@ class MotionLayerManager {
     return [];
   }
 
-  getTopLayerHandler(containerId: string = DEFAULT_RALAYER_CONTAINER_ID) {
+  getTopLayerHandler(containerId: string = DEFAULT_MOTION_LAYER_CONTAINER_ID) {
     if (this.motionLayerContainerHandlers.has(containerId)) {
       return this.motionLayerContainerHandlers.get(containerId);
     }
@@ -43,7 +43,7 @@ class MotionLayerManager {
 
   setContainerHandler(
     handler: MotionLayerContainerHandler,
-    containerId: string = DEFAULT_RALAYER_CONTAINER_ID,
+    containerId: string = DEFAULT_MOTION_LAYER_CONTAINER_ID,
   ) {
     this.motionLayerContainerHandlers.set(containerId, handler);
   }
@@ -51,10 +51,11 @@ class MotionLayerManager {
   present(
     comFunc: ComponentFunc,
     options: {containerId: string | undefined} = {
-      containerId: DEFAULT_RALAYER_CONTAINER_ID,
+      containerId: DEFAULT_MOTION_LAYER_CONTAINER_ID,
     },
   ) {
-    const containerId = options.containerId || DEFAULT_RALAYER_CONTAINER_ID;
+    const containerId =
+      options.containerId || DEFAULT_MOTION_LAYER_CONTAINER_ID;
     //
     const childComponentFuncs = this.getChildComponentFuncs(
       options.containerId,
@@ -98,7 +99,7 @@ class MotionLayerManager {
 
   dismiss(
     ctx: ComponentContext = {
-      containerId: DEFAULT_RALAYER_CONTAINER_ID,
+      containerId: DEFAULT_MOTION_LAYER_CONTAINER_ID,
       componentId: DEFAULT_COMPONENT_ID,
     },
   ) {
@@ -108,6 +109,30 @@ class MotionLayerManager {
     if (containerHandler) {
       containerHandler.rerenderIfAny();
     }
+  }
+
+  dismissAll(
+    ctx = {
+      containerId: DEFAULT_MOTION_LAYER_CONTAINER_ID,
+    },
+  ) {
+    const childComponentFuncs = this.getChildComponentFuncs(ctx.containerId);
+    //
+    for (const component of childComponentFuncs) {
+      MotionLayerComponentStorage.remove(component.componentId);
+    }
+    this.ChildComponentFuncs.set(ctx.containerId, []);
+    //
+    const containerHandler = this.getTopLayerHandler(ctx.containerId);
+    if (containerHandler) {
+      containerHandler.rerenderIfAny();
+    }
+  }
+
+  dismissAllContainers() {
+    this.ChildComponentFuncs.forEach((value, key) => {
+      this.dismissAll({containerId: key});
+    });
   }
 
   cleanupContainer(containerId: string) {

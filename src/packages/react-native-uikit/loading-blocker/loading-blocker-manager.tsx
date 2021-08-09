@@ -5,6 +5,7 @@ import {
   MotionLayerHandler,
   MotionLayerComponentProps,
   MotionLayerAnimations,
+  DEFAULT_MOTION_LAYER_CONTAINER_ID,
 } from '@kailash-js/react-native-motion-layers';
 
 import {View, ActivityIndicator} from 'react-native';
@@ -14,7 +15,10 @@ class LoadingBlockerManager {
   transparentMLHandler = Handler.createStaticHandler<MotionLayerHandler>();
 
   hideLoadingBlockerDelay = 250;
+
   hideTransparentLoadingBlockerDelay = 250;
+
+  motionLayerContainerId = DEFAULT_MOTION_LAYER_CONTAINER_ID;
   //
   //This can be outside of the app for a customization
   loadingBlockerView: React.FC | null = () => {
@@ -51,6 +55,7 @@ class LoadingBlockerManager {
         overlayTouchDimiss: false,
       },
       viewAlignment: 'auto',
+      targetContainerId: this.motionLayerContainerId,
     });
   }
 

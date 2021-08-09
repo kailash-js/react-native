@@ -7,15 +7,13 @@ import {
   LayoutChangeEvent,
   useWindowDimensions,
 } from 'react-native';
-import Animated from 'react-native-reanimated';
-
-const {
+import Animated, {
   useSharedValue,
   useAnimatedStyle,
   Extrapolate,
   withSpring,
   interpolate,
-} = Animated;
+} from 'react-native-reanimated';
 
 interface CollapsiblePanelViewProps extends ViewProps {
   style: StyleProp<ViewStyle>;

@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
 import {Text, View, Button} from 'react-native';
 import {LayerStack} from '@kailash-js/react-native-uikit';
-import Animated from 'react-native-reanimated';
-
-const {interpolate, Extrapolate, useAnimatedStyle} = Animated;
+import Animated, {
+  interpolate,
+  Extrapolate,
+  useAnimatedStyle,
+} from 'react-native-reanimated';
 
 interface TestViewProps extends LayerStack.LayerStackComponentProps {}
 
@@ -88,12 +90,12 @@ const TestView0: React.FC<TestView0Props> = () => {
 
 export const StackLayersScreen = () => {
   const onAction = () => {
-    LayerStack.LayerStackManager.push((ctx) => {
+    LayerStack.LayerStackManager.push(ctx => {
       return <TestView componentContext={ctx} />;
     });
   };
   const onAction1 = () => {
-    LayerStack.LayerStackManager.push((ctx) => {
+    LayerStack.LayerStackManager.push(ctx => {
       return <TestView1 componentContext={ctx} />;
     });
   };
@@ -103,7 +105,7 @@ export const StackLayersScreen = () => {
   };
 
   useEffect(() => {
-    LayerStack.LayerStackManager.push((ctx) => {
+    LayerStack.LayerStackManager.push(ctx => {
       ctx.animation = false;
       return <TestView0 componentContext={ctx} />;
     });

@@ -1,7 +1,7 @@
 {
     "name": "@kailash-js/react-native-motion-layers",
     "description": "A generic customizable framework to handle dynamic views in react-native.",
-    "version": "1.0.3",
+    "version": "1.0.7",
     "keywords": [
         "react-native-component",
         "react-component",

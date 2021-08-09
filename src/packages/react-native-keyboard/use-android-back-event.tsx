@@ -21,5 +21,5 @@ export const useAndroidBackEvent = (
     return () => {
       BackHandler.removeEventListener('hardwareBackPress', onBackPress);
     };
-  });
+  }, []);
 };

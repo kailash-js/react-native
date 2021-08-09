@@ -12,8 +12,11 @@ import {SlideLayers, KLButton} from '@kailash-js/react-native-uikit';
 import {Menu, MenuProps} from './Menu';
 import InputPanel from './InputPanel';
 import {Handler} from '@kailash-js/react-native-bases';
-import Animated from 'react-native-reanimated';
-const {interpolate, Extrapolate, useAnimatedStyle} = Animated;
+import Animated, {
+  interpolate,
+  Extrapolate,
+  useAnimatedStyle,
+} from 'react-native-reanimated';
 
 export const MotionLayersSlideUpPanelScreen = () => {
   const slideUpHandler = Handler.useHandler<MotionLayerHandler>();
@@ -212,7 +215,7 @@ export const MotionLayersSlideUpPanelScreen = () => {
           }}>
           <View style={{}}>
             <Menu
-              onSelectMenuItem={(menuItemId) => {
+              onSelectMenuItem={menuItemId => {
                 //ctx.motionLayerHandler?.dismiss();
                 if (menuItemId === 'share') {
                   showSlideFromRightPopupAction();

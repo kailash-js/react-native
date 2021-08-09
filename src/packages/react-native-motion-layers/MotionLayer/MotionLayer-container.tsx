@@ -1,7 +1,7 @@
 import React, {FC, useState, useEffect} from 'react';
 import {
   MotionLayerManager,
-  DEFAULT_RALAYER_CONTAINER_ID,
+  DEFAULT_MOTION_LAYER_CONTAINER_ID,
 } from './MotionLayer-manager';
 import {SubMotionLayerContainer} from './SubMotionLayer-container';
 import {MotionLayerContainerHandler} from '../types';
@@ -14,7 +14,7 @@ export interface MotionLayerContainerProps {
 }
 
 const MotionLayerContainer: FC<MotionLayerContainerProps> = ({
-  containerId = DEFAULT_RALAYER_CONTAINER_ID,
+  containerId = DEFAULT_MOTION_LAYER_CONTAINER_ID,
   supportSubLayerContainerAnimation = false,
 }) => {
   const handler = Handler.useHandler<MotionLayerContainerHandler>();
@@ -25,7 +25,7 @@ const MotionLayerContainer: FC<MotionLayerContainerProps> = ({
   MotionLayerManager.setContainerHandler(handler, containerId);
   //
   const rerenderIfAny = () => {
-    setRerender((value) => ++value);
+    setRerender(value => ++value);
   };
 
   Handler.useExposeHandler(
@@ -50,7 +50,7 @@ const MotionLayerContainer: FC<MotionLayerContainerProps> = ({
     if (supportSubLayerContainerAnimation) {
       return (
         <>
-          {ChildComponentFuncs.map((componentFuncItem) => {
+          {ChildComponentFuncs.map(componentFuncItem => {
             return (
               <SubMotionLayerContainer
                 key={componentFuncItem.componentId}
@@ -64,7 +64,7 @@ const MotionLayerContainer: FC<MotionLayerContainerProps> = ({
     } else {
       return (
         <>
-          {ChildComponentFuncs.map((componentFuncItem) => {
+          {ChildComponentFuncs.map(componentFuncItem => {
             return (
               <React.Fragment key={componentFuncItem.componentId}>
                 {componentFuncItem.func(componentFuncItem.ctx)}

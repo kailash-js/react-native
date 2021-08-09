@@ -1,9 +1,11 @@
 import React, {FC} from 'react';
 import {StyleSheet} from 'react-native';
-import Animated from 'react-native-reanimated';
+import Animated, {
+  useAnimatedStyle,
+  interpolate,
+  Extrapolate,
+} from 'react-native-reanimated';
 import {State, TapGestureHandler} from 'react-native-gesture-handler';
-
-const {interpolate, Extrapolate, useAnimatedStyle} = Animated;
 
 export interface OverlayViewProps {
   animatedProgress: Animated.SharedValue<number>;
