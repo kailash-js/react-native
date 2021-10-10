@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, Pressable} from 'react-native';
-import {KLButton} from '@kailash-js/react-native-uikit';
-import {Hooks} from '@kailash-js/react-native-bases';
+import {KLButton} from '@kailash-js/motion-ui';
+import {Hooks} from '@kailash-js/foundation';
 export const MiscellaneousScreen = () => {
   //
   const onButtonPressed = () => {

@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import {View, Text} from 'react-native';
-import {Handler} from '@kailash-js/react-native-bases';
+import {Handler} from '@kailash-js/foundation';
 
 export interface HelloViewHandler {
   justDoIt: () => void;

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, Button} from 'react-native';
-import {MotionViews} from '@kailash-js/react-native-uikit';
+import {MotionViews} from '@kailash-js/motion-ui';
 
 interface ComponentAProps {}
 

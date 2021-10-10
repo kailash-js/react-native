@@ -20,14 +20,14 @@ import {
   RAContentLayoutComponent,
   MotionLayerInputContentLayout,
   MotionLayerComponentProps,
-} from '@kailash-js/react-native-uikit';
-import {LoadingBlockerManager} from '@kailash-js/react-native-uikit';
+} from '@kailash-js/motion-ui';
+import {LoadingBlockerManager} from '@kailash-js/motion-ui';
 import {
   PopOverView,
   MPopoverLayerPresenter,
-} from '@kailash-js/react-native-uikit';
+} from '@kailash-js/motion-ui';
 
-import {Handler} from '@kailash-js/react-native-bases';
+import {Handler} from '@kailash-js/foundation';
 import {TestContentComponent} from './TestContentComponent';
 import {
   runOnJS,

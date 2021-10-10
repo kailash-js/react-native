@@ -1,0 +1,20 @@
+{
+    "name": "@kailash-js/foundation",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,  
+    "main": "index.ts",    
+    "scripts": {
+      "clean": "rm -r -f dist/lib/*",
+      "build":"./../../../node_modules/typescript/bin/tsc --project tsconfig.production.json",
+      "clean-build":"yarn clean && yarn build",
+      "publish-package": "yarn clean && yarn build && cd dist && npm publish"
+    },
+    "dependencies": {
+      
+    },
+    "peerDependencies": {
+      "eventemitter3": "^3.1.0"
+    }
+  }
+  

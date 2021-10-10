@@ -5,8 +5,8 @@ import {
   MotionLayerAnimations,
   MotionLayerHandler,
   MotionLayerComponentProps,
-} from '@kailash-js/react-native-uikit';
-import {Handler} from '@kailash-js/react-native-bases';
+} from '@kailash-js/motion-ui';
+import {Handler} from '@kailash-js/foundation';
 import {FirstScreen, FirstScreenProps} from './FirstScreen';
 import {FirstScreen1, FirstScreen1Props} from './FirstScreen1';
 import {FirstScreen2, FirstScreen2Props} from './FirstScreen2';

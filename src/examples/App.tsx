@@ -12,7 +12,7 @@ import 'react-native-reanimated';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {MotionLayerContainer} from '@kailash-js/react-native-uikit';
+import {MotionLayerContainer} from '@kailash-js/motion-ui';
 import {HomeScreen} from './home-screen';
 import {HandlerScreen} from './Handler';
 import {MiscellaneousScreen} from './Miscellaneous';

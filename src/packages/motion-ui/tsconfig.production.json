@@ -1,0 +1,24 @@
+{  
+  "compilerOptions": {     
+    "paths": {      
+      "@kailash-js/foundation": ["./foundation"],
+      "@kailash-js/motion-layers": ["./motion-layers"],     
+      "@kailash-js/keyboard": ["./keyboard"],     
+    },
+    "baseUrl": "../../packages",
+    "target": "es2017",
+    "lib": ["es6"],
+    "jsx": "react-native",
+    "strict": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "types": ["react", "react-native"],           
+    "declaration": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist/lib" ,
+  },  
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -3,10 +3,10 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {      
-      "@kailash-js/react-native-bases": ["packages/react-native-bases"],
-      "@kailash-js/react-native-motion-layers": ["packages/react-native-motion-layers"],
-      "@kailash-js/react-native-uikit": ["packages/react-native-uikit"],
-      "@kailash-js/react-native-keyboard": ["packages/react-native-keyboard"],      
+      "@kailash-js/foundation": ["packages/react-native-bases"],
+      "@kailash-js/motion-layers": ["packages/react-native-motion-layers"],
+      "@kailash-js/motion-ui": ["packages/react-native-uikit"],
+      "@kailash-js/keyboard": ["packages/react-native-keyboard"],      
       "@types": ["examples/types"],
       "@components": ["examples/components"],
       "@assets": ["examples/assets"],

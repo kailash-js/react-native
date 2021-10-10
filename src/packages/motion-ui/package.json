@@ -1,0 +1,19 @@
+{
+  "name": "@kailash-js/motion-ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.ts",    
+  "scripts": {
+    "clean": "rm -r -f dist/lib/*",
+    "build":"./../../../node_modules/typescript/bin/tsc --project tsconfig.production.json",
+    "optimized-lib":"cp -r dist/lib/ dist/temp && rm -r -f dist/lib/* && cp -r dist/temp/motion-ui/* dist/lib && rm -r -f dist/temp",
+    "clean-build":"yarn clean && yarn build && yarn optimized-lib",
+    "publish-package": "yarn clean-build && cd dist && npm publish"
+  },
+  "peerDependencies": {
+    "@kailash-js/foundation": "^1.0.0",
+    "@kailash-js/motion-layers": "^1.0.0",
+    "@kailash-js/keyboard":"^1.0.0"
+  }
+}

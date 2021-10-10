@@ -12,13 +12,13 @@ import {
   MotionLayerManager,
   ComponentContext,
   MotionLayerComponentProps,
-} from '@kailash-js/react-native-uikit';
+} from '@kailash-js/motion-ui';
 
-import {SlideLayers, KLButton} from '@kailash-js/react-native-uikit';
+import {SlideLayers, KLButton} from '@kailash-js/motion-ui';
 
 import {Menu, MenuProps} from './Menu';
 import InputPanel from './InputPanel';
-import {Handler} from '@kailash-js/react-native-bases';
+import {Handler} from '@kailash-js/foundation';
 import Animated, {
   interpolate,
   Extrapolate,
@@ -27,7 +27,7 @@ import Animated, {
 import {
   ViewWithKeyboardReaction,
   AutoDimissKeyboardView,
-} from '@kailash-js/react-native-uikit';
+} from '@kailash-js/motion-ui';
 
 export const MotionLayersSlideUpPanelScreen = () => {
   const slideUpHandler = Handler.useHandler<MotionLayerHandler>();

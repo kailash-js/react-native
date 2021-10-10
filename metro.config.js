@@ -13,6 +13,10 @@ module.exports = {
       /packages\/react-native-motion-layers\/dist\/.*/,
       /packages\/react-native-uikit\/dist\/.*/,
       /packages\/react-native-keyboard\/dist\/.*/,
+      /packages\/foundation\/dist\/.*/,
+      /packages\/motion-layers\/dist\/.*/,
+      /packages\/motion-ui\/dist\/.*/,
+      /packages\/keyboard\/dist\/.*/,
     ]),
   },
   transformer: {

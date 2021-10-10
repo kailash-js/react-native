@@ -1,0 +1,17 @@
+{  
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": ["es6"],
+    "jsx": "react-native",
+    "strict": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "types": ["react", "react-native"],    
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist/lib" 
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
