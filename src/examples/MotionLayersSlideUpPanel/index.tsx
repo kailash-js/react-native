@@ -12,9 +12,9 @@ import {
   MotionLayerManager,
   ComponentContext,
   MotionLayerComponentProps,
-} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
 
-import {SlideLayers, KLButton} from '@kailash-js/motion-ui';
+import {SlideLayers, KLButton} from '@kailash-js/motion-uikit';
 
 import {Menu, MenuProps} from './Menu';
 import InputPanel from './InputPanel';
@@ -27,7 +27,7 @@ import Animated, {
 import {
   ViewWithKeyboardReaction,
   AutoDimissKeyboardView,
-} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
 
 export const MotionLayersSlideUpPanelScreen = () => {
   const slideUpHandler = Handler.useHandler<MotionLayerHandler>();

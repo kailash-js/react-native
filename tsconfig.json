@@ -5,7 +5,7 @@
     "paths": {      
       "@kailash-js/foundation": ["packages/react-native-bases"],
       "@kailash-js/motion-layers": ["packages/react-native-motion-layers"],
-      "@kailash-js/motion-ui": ["packages/react-native-uikit"],
+      "@kailash-js/motion-uikit": ["packages/react-native-uikit"],
       "@kailash-js/keyboard": ["packages/react-native-keyboard"],      
       "@types": ["examples/types"],
       "@components": ["examples/components"],

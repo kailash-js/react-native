@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, Pressable} from 'react-native';
-import {KLButton} from '@kailash-js/motion-ui';
+import {KLButton} from '@kailash-js/motion-uikit';
 import {Hooks} from '@kailash-js/foundation';
 export const MiscellaneousScreen = () => {
   //

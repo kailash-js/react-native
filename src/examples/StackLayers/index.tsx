@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Text, View, Button} from 'react-native';
-import {LayerStack} from '@kailash-js/motion-ui';
+import {LayerStack} from '@kailash-js/motion-uikit';
 import Animated, {
   interpolate,
   Extrapolate,

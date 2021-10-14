@@ -5,7 +5,7 @@ import {
   MotionLayerAnimations,
   MotionLayerHandler,
   MotionLayerComponentProps,
-} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
 import {Handler} from '@kailash-js/foundation';
 import {FirstScreen, FirstScreenProps} from './FirstScreen';
 import {FirstScreen1, FirstScreen1Props} from './FirstScreen1';

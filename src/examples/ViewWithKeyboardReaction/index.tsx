@@ -3,7 +3,7 @@ import {TextInput} from 'react-native';
 import {
   ViewWithKeyboardReaction,
   AutoDimissKeyboardView,
-} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
 export const ViewWithKeyboardReactionScreen = () => {
   return (
     <ViewWithKeyboardReaction

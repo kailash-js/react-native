@@ -20,12 +20,12 @@ import {
   RAContentLayoutComponent,
   MotionLayerInputContentLayout,
   MotionLayerComponentProps,
-} from '@kailash-js/motion-ui';
-import {LoadingBlockerManager} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
+import {LoadingBlockerManager} from '@kailash-js/motion-uikit';
 import {
   PopOverView,
   MPopoverLayerPresenter,
-} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
 
 import {Handler} from '@kailash-js/foundation';
 import {TestContentComponent} from './TestContentComponent';

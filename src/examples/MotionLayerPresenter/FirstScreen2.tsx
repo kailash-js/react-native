@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Text, View, Button} from 'react-native';
-import {MotionLayerComponentProps} from '@kailash-js/motion-ui';
+import {MotionLayerComponentProps} from '@kailash-js/motion-uikit';
 
 export interface FirstScreen2Props extends MotionLayerComponentProps {
   text: string;

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Text, View, ScrollView, Button} from 'react-native';
-import {CollapsiblePanelView} from '@kailash-js/motion-ui';
+import {CollapsiblePanelView} from '@kailash-js/motion-uikit';
 
 export const CollapsibleScreen = () => {
   const [expand, setExpand] = useState(true);

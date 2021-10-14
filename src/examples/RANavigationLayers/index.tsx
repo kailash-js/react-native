@@ -3,8 +3,8 @@ import {Text, View, Button} from 'react-native';
 import {
   MotionLayerContainer,
   MotionLayerComponentProps,
-} from '@kailash-js/motion-ui';
-import {SlideUpNavigationManager} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
+import {SlideUpNavigationManager} from '@kailash-js/motion-uikit';
 import {FirstScreen, FirstScreenProps} from './FirstScreen';
 
 export const RANavigationLayersScreen = () => {

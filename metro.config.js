@@ -15,7 +15,7 @@ module.exports = {
       /packages\/react-native-keyboard\/dist\/.*/,
       /packages\/foundation\/dist\/.*/,
       /packages\/motion-layers\/dist\/.*/,
-      /packages\/motion-ui\/dist\/.*/,
+      /packages\/motion-uikit\/dist\/.*/,
       /packages\/keyboard\/dist\/.*/,
     ]),
   },

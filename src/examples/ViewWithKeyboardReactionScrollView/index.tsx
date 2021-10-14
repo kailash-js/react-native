@@ -3,7 +3,7 @@ import {TextInput, ScrollView} from 'react-native';
 import {
   ViewWithKeyboardReaction,
   AutoDimissKeyboardView,
-} from '@kailash-js/motion-ui';
+} from '@kailash-js/motion-uikit';
 import {useAndroidResizeKeyboard} from '@kailash-js/keyboard';
 
 export const ViewWithKeyboardReactionScrollViewScreen = () => {

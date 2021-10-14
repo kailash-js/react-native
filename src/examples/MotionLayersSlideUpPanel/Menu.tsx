@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {MenuItemsDataSource} from './MenuConfig';
 import MenuItem from './MenuItem';
-import {MotionLayerComponentProps} from '@kailash-js/motion-ui';
+import {MotionLayerComponentProps} from '@kailash-js/motion-uikit';
 
 export interface MenuProps extends MotionLayerComponentProps {
   onSelectMenuItem: (menuItemId: string) => void;
