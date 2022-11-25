@@ -22,6 +22,7 @@ const defaultSpringConfig = {
 
 export interface ViewPresenterProps {
   isDisplaying: boolean;
+  pointerEvents?: 'box-none' | 'none' | 'box-only' | 'auto' | undefined;
   mode?: 'alway-allocate-size' | 'default';
   children?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
@@ -29,14 +30,14 @@ export interface ViewPresenterProps {
 }
 export const DisplayIf: React.FC<ViewPresenterProps> = ({
   isDisplaying,
+  pointerEvents = 'auto',
   mode = 'default',
   children,
   style,
   animatedContainerStyle,
 }) => {
-  const [shouldRenderChildren, setShouldRenderChildren] = useState<boolean>(
-    isDisplaying,
-  );
+  const [shouldRenderChildren, setShouldRenderChildren] =
+    useState<boolean>(isDisplaying);
   //
   const animationProgress = useSharedValue(0);
   const contentHeight = useSharedValue(0);
@@ -111,7 +112,7 @@ export const DisplayIf: React.FC<ViewPresenterProps> = ({
   };
 
   const performHideAnimation = () => {
-    animationProgress.value = withSpring(0, defaultSpringConfig, (finished) => {
+    animationProgress.value = withSpring(0, defaultSpringConfig, finished => {
       if (finished) {
         runOnJS(setShouldRenderChildren)(false);
       }
@@ -132,7 +133,9 @@ export const DisplayIf: React.FC<ViewPresenterProps> = ({
   }, [isDisplaying]);
 
   return (
-    <Animated.View style={[{overflow: 'hidden'}, style, panelAnimatedStyle]}>
+    <Animated.View
+      pointerEvents={pointerEvents}
+      style={[{overflow: 'hidden'}, style, panelAnimatedStyle]}>
       {shouldRenderChildren || mode === 'alway-allocate-size' ? (
         <Animated.View
           style={[animatedContainerStyle, contentAnimatedStyle]}

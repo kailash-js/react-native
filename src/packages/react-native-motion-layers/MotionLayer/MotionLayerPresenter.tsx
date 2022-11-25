@@ -9,6 +9,7 @@ import {
   MotionLayerHandler,
   MotionLayerConfig,
   MViewAlignment,
+  MotionLayerComponentProps,
 } from '../types';
 import {ViewStyle} from 'react-native';
 import Animated from 'react-native-reanimated';
@@ -60,7 +61,7 @@ class MotionLayerPresenter {
     return {};
   }
 
-  present<T>(config: MotionLayerConfig<T>) {
+  present<T extends MotionLayerComponentProps>(config: MotionLayerConfig<T>) {
     return MotionLayerManager.present(
       (ctx: ComponentContext) => {
         return (

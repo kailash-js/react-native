@@ -4,13 +4,14 @@ import {
   MotionLayerManager,
   ComponentContext,
   MotionLayerHandler,
+  MotionLayerComponentProps,
 } from '@kailash-js/react-native-motion-layers';
 import {PopOverView} from './popover-view';
 import Animated from 'react-native-reanimated';
 import {MPopoverLayerConfig} from './types';
 
 class MPopoverLayerPresenter {
-  present<T>(config: MPopoverLayerConfig<T>) {
+  present<T extends MotionLayerComponentProps>(config: MPopoverLayerConfig<T>) {
     return MotionLayerManager.present(
       (ctx: ComponentContext) => {
         return (
@@ -44,7 +45,10 @@ class MPopoverLayerPresenter {
           </PopOverView>
         );
       },
-      {containerId: config.targetContainerId || DEFAULT_MOTION_LAYER_CONTAINER_ID},
+      {
+        containerId:
+          config.targetContainerId || DEFAULT_MOTION_LAYER_CONTAINER_ID,
+      },
     );
   }
 }

@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {SlideLayerProps, SlideLayerPresenter} from '../SlideLayers';
 import {utils} from '@kailash-js/react-native-bases';
+import {MotionLayerComponentProps} from '@kailash-js/react-native-motion-layers';
 
 export interface RAScreen<T> {
   screenComponent: React.FC<T>;
@@ -13,7 +14,7 @@ export interface RAScreen<T> {
 class SlideUpNavigationManager {
   componentStack = new utils.Stack<string>();
   //
-  push<T>(screenInfo: RAScreen<T>) {
+  push<T extends MotionLayerComponentProps>(screenInfo: RAScreen<T>) {
     if (screenInfo.style === 'modal') {
       const componentId = SlideLayerPresenter.present<T>({
         MotionLayerComponent: screenInfo.screenComponent,

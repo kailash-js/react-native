@@ -4,13 +4,14 @@ import {
   MotionLayerManager,
   ComponentContext,
   MotionLayerHandler,
+  MotionLayerComponentProps,
 } from '@kailash-js/react-native-motion-layers';
 import {SlideLayerConfig} from './types';
 import * as SlideLayers from './SlideLayers';
 import Animated from 'react-native-reanimated';
 
 class SlideLayerPresenter {
-  present<T>(config: SlideLayerConfig<T>) {
+  present<T extends MotionLayerComponentProps>(config: SlideLayerConfig<T>) {
     const autoDismissKeyboard = config.autoDismissKeyboard || true;
     //
     if (autoDismissKeyboard) {
